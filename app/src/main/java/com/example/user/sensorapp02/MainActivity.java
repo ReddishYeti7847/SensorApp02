@@ -12,11 +12,14 @@ import android.util.Log;
 import java.util.List;
 
 public class MainActivity extends AppCompatActivity implements SensorEventListener {
+    CanvasView cv;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_main);
+        //setContentView(R.layout.activity_main);
+        cv = new CanvasView(this, null);
+        setContentView(cv);
 
         //端末のセンサーリストを表示
         SensorManager sm = (SensorManager)this.getSystemService(Context.SENSOR_SERVICE);
